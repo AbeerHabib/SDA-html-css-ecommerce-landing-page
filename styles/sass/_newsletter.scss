@@ -1,0 +1,71 @@
+@use 'variable';
+
+@mixin button-border($width, $style, $cursor) {
+    border-width: $width;
+    border-style: $style;
+    cursor: $cursor;
+}
+
+/*newsletter section*/
+
+#newsletter-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    position: relative;
+    background-color: variable.$maroon;
+
+    h3{
+        font-size: variable.$section-headings-font-size;
+        color: variable.$white; 
+    }
+
+    #newsletter-section-container{
+        position: relative;
+        width: 70%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem;
+        color: variable.$white;
+
+        form{
+            width: 100%;
+            display: inline-block;
+            justify-content: center;
+            text-align: center;
+            margin-top: 1.25rem; margin-bottom: 1.25rem;
+
+            input[type=email]{
+                position: relative;
+                color: variable.$dark-gray;
+                font-size: 0.9rem;
+                width: 50%;
+                padding: 0.75rem 1.25rem;
+                border: 1px solid variable.$white;
+                box-sizing: border-box;
+              }
+              
+              input[type=submit] {
+                width: 9.375rem; height: 2.813rem;
+                margin-left: 0.6rem; margin-right: 0.6rem;
+                border-color: variable.$white;
+                @include button-border(1px, solid, pointer);
+                font-size: 1rem;
+                background-color: transparent;
+                color: variable.$white;
+
+                &:hover{
+                    background-color:rgba(255, 255, 255, 50%);
+                    transition: variable.$transition;
+                    }
+            }
+        }
+
+    }
+}

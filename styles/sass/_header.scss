@@ -1,0 +1,71 @@
+@use 'variable';
+
+//mixin
+@mixin btn($width, $style, $cursor) {
+    border-width: $width;
+    border-style: $style;
+    cursor: $cursor;
+}
+
+/*header*/
+
+header{
+    background-color: rgb(255,255,255,90%);
+    display: flex;
+    align-items: center;
+    padding: 0.9rem;
+    box-sizing: border-box;
+    position: fixed;
+    right:0;
+    left: 0;
+	z-index: 10000;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+    
+    ul li{
+        list-style: none;
+        display: inline-block;
+        margin-left: 3.75rem;
+
+        a{
+            color: variable.$dark-gray;
+            font-size: variable.$header-font-size;
+        }
+    }
+}
+
+#login{
+    margin-left: 5%;
+
+    button{
+        width: 7.5rem; height: 2.5rem;
+        margin-left: 0.6rem; margin-right: 0.6rem;
+        @include btn(1px, solid, pointer);
+        border-color: variable.$dark-gray;
+        font-size: variable.$header-font-size;
+    }
+
+    #log-in-btn{
+        background-color: variable.$white;
+        color: #333;
+
+        &:hover{
+            background-color:rgba(155, 7, 80, 15%);
+            transition: variable.$transition;
+        }
+    }
+    #sign-up-btn{
+        background-color: variable.$maroon;
+        color: variable.$white;
+        
+        &:hover{
+            background-color:rgba(155, 7, 80, 15%);
+            color: variable.$dark-gray;
+            transition: variable.$transition;
+        }
+    }
+
+}

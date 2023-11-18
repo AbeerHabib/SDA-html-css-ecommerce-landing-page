@@ -1,0 +1,89 @@
+@use 'variable';
+
+/*footer*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    #footer-container{
+        color: variable.$white;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: variable.$dark-gray;
+
+        .footer-box{
+            width: 30%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin: 0.9rem;
+            padding: 0.5rem;
+
+            h3{
+                font-size: variable.$footer-headings-font-size;
+                font-weight: normal;
+            }
+           
+        }
+
+        #about-us p{
+            text-align: justify;
+            font-size: variable.$footer-content-font-size;
+            margin-top: 1.25rem;
+            font-weight: lighter;
+        } 
+
+        #quick-links ul{
+            margin-top: 1.25rem;
+
+            li{
+                list-style: none;
+                font-weight: lighter;
+
+                a{
+                    color: variable.$white;
+                    font-size: variable.$footer-content-font-size;
+                    margin-top: 1.25rem;
+                }
+            }
+        }
+
+        #follow-and-contact{
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+
+            #follow-us{
+                margin-top: 1.25rem;
+            }
+
+            #contact-us{
+                margin-top: 1.25rem;
+                font-size: variable.$footer-content-font-size;
+
+                a{
+                    color: variable.$white;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        #copy-right{
+            text-align: center;
+            width: 100%;
+            color: variable.$white;
+            font-size: 0.75rem;
+        }
+    }
+}

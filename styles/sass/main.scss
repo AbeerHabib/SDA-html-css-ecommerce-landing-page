@@ -1,0 +1,51 @@
+//Partials
+@forward 'reset';
+@forward 'header';
+@forward 'hero-section';
+@forward 'products';
+@forward 'reviews';
+@forward 'newsletter';
+@forward 'footer';
+@forward 'links';
+@use 'variable';
+
+/*burger menu - responsiveness*/
+
+.toggle-btn{
+    width: 1.8rem;
+    height: 1.3rem;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 1rem;
+    top: 3rem;
+    display: none;
+
+    .bar {
+        height: 0.2rem;
+        width: 100%;
+        background-color: variable.$dark-gray;
+    }
+}
+
+/* responsive page*/
+
+@media (max-width: 62rem) {
+    .toggle-btn{
+        display: flex;
+    }
+    
+    #nav, #login{
+        display: none;
+    }
+
+    #hero-section div h1{
+        font-size: 5vh;
+        width: 100%;
+    }
+
+    #hero-section div h2{
+        font-size: 3vh;
+        margin-top: 1rem;
+    }
+}

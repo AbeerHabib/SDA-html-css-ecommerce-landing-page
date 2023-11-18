@@ -1,0 +1,67 @@
+@use 'variable';
+
+//mixin
+@mixin card-border($width, $style, $color) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+}
+
+
+/*products showcase section*/
+
+#products-showcase-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4%;
+    position: relative;
+    color: variable.$dark-gray;
+
+    h3{
+        font-size: variable.$section-headings-font-size;
+        color: variable.$dark-gray;
+    }
+
+    #products-showcase-section-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 1.8rem; padding-bottom: 1.8rem;
+
+        .product{
+            width: 19rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin: 0.9rem;
+            padding: 0.5rem;
+            @include card-border(1px, solid, variable.$light-gray);
+
+
+            h4{
+                color: variable.$maroon;
+                margin-top: 0.6rem;
+            }
+
+            .product-desc{
+                text-align: justify;
+                font-size: 0.9rem;
+                margin-top: 0.6rem; margin-bottom: 0.6rem;
+            }
+            
+            .product-price{
+                font-weight: bold;
+                margin-top: 0.6rem;
+            }
+        }
+    }
+
+}

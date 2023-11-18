@@ -1,0 +1,54 @@
+@use 'variable';
+
+//mixin
+@mixin btn-border-style($width, $style, $cursor) {
+    border-width: $width;
+    border-style: $style;
+    cursor: $cursor;
+}
+
+/*hero section*/
+
+#hero-section{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    background-image: url('/assets/images/lily-flowers-arrangements.jpg');
+    position: relative;
+    padding: 6rem;
+    height: 50rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    div{
+        width: 75%;
+        padding-top: 10%;
+        color: variable.$dark-gray;
+        }
+    
+    h1{
+        font-size: 7vh;
+        width: 80%;
+        font-weight: bold;
+    }
+
+    h2{
+        font-size: 4vh;
+        margin-top: 1.25rem;
+    }
+
+    button{
+        margin-top: 3.125rem;
+        width: 12.5rem; height: 4rem;
+        @include btn-border-style(1px, solid, pointer);
+        border-color: variable.$dark-gray;
+        font-size: 1rem;
+        color: variable.$black;
+        background-color: transparent;
+
+        &:hover{
+            background-color: rgb(51,51,51,15%);
+            transition: variable.$transition;
+        }
+    }
+}
